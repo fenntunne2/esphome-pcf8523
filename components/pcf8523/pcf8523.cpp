@@ -24,7 +24,8 @@ void PCF8523Component::dump_config() {
   if (this->is_failed()) {
     ESP_LOGE(TAG, "Communication with PCF8523 failed!");
   }
-  ESP_LOGCONFIG(TAG, "  Timezone: '%s'", this->timezone_.c_str());
+  //ESP_LOGCONFIG(TAG, "  Timezone: '%s'", this->timezone_.c_str());
+  RealTimeClock::dump_config();
 }
 
 float PCF8523Component::get_setup_priority() const { return setup_priority::DATA; }
